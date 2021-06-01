@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+class HelloWorld {
+    public static void main(String[] args) {
+        
+        Scanner sc = new Scanner(System.in); 
+        double[] a = new double[5];
+        double sum1 = 0, sum2 = 0;
+        for(int i = 0; i < 5; i++) {
+            System.out.print("number "+(i+1)+" = ");
+            a[i] = sc.nextDouble();
+            sum1 += a[i];
+        }
+        for(int i = 0; i < 5; i++) {
+           double sum = a[i] - (sum1/5);
+           sum2 += (sum*sum);
+        }
+        System.out.print("xBar = "+(sum1/5)+"  sSquare = "+sum2/5);
+    }
+}
