@@ -1,0 +1,33 @@
+import java.util.Scanner;
+import java.util.Arrays;
+
+class Main {
+    public static void main(String[] args){
+        
+        Scanner sc = new Scanner(System.in);
+        
+        int[] array = new int[20];
+        
+        int i = 0, n1 = 0, n2 = 0, max_count = 0, max_v = 0;
+        while(n1 != -1){
+            n1 = sc.nextInt();
+            if(n1 != -1){
+                n2 += 1;
+                array[i] = n1;
+                i++;
+            }
+        }
+        for(int a = 0 ; a < n2 ; a++){
+            int count = 0;
+            for(int j = 0 ; j < n2 ; j++){
+                if(array[j] == array[a]) count++;
+            }
+            if(count > max_count) {
+                max_count = count;
+                max_v = array[a];
+            }
+        }
+        if(max_count > (n2/2)) System.out.print(max_v);
+        else System.out.print("Not found");
+    }
+}
