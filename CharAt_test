@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class Dokb{
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        String sum = sc.next();
+
+        double sum3 = 0;
+
+        for(int i = 0; i < sum.length(); i++){
+            if(sum.charAt(i) == 'A'){
+                String sum1 = sum.substring(0, i);
+                String sum2 = sum.substring(i + 1, sum.length());
+                sum3 = Double.parseDouble(sum1) + Double.parseDouble(sum2);
+            }
+            else if(sum.charAt(i) == 'B'){
+                String sum1 = sum.substring(0, i);
+                String sum2 = sum.substring(i + 1, sum.length());
+                sum3 = Double.parseDouble(sum1) - Double.parseDouble(sum2);
+            }
+            else if(sum.charAt(i) == 'M'){
+                String sum1 = sum.substring(0, i);
+                String sum2 = sum.substring(i + 1, sum.length());
+                sum3 = Double.parseDouble(sum1) * Double.parseDouble(sum2);
+            }
+            else if(sum.charAt(i) == 'H'){
+                String sum1 = sum.substring(0, i);
+                String sum2 = sum.substring(i + 1, sum.length());
+                sum3 = Double.parseDouble(sum1) / Double.parseDouble(sum2);
+            }
+        }
+        System.out.print(sum3);
+    }
+}
