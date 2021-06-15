@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class StupidCodeYea{
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        double vol = sc.nextDouble();
+        if(vol >= 0){
+            if(vol > 30){
+                vol += ((vol-30) * 21.20) + 102 + 160 + 190;
+            }
+            else if(vol > 20){
+                vol += ((vol-30) * 19.00) + 102 + 160;
+            }
+            else if(vol > 10){
+                vol += ((vol-30) * 16.00) + 102;
+            }
+            else vol += ((vol-30) * 10.20);
+        }
+        else System.out.print("Stupid error");
+        System.out.print(vol);
+    }
+}
